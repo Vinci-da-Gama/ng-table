@@ -39,7 +39,7 @@
 
 	}]);*/
 (function () {
-	var sM = angular.module('appname.service');
+	var sM = angular.module('ntp.service');
 
 	// sM
 

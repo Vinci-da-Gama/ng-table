@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="ng-table_practice...">
+<html data-ng-app="ntp">
 <head>
 	<!-- Browser and Mobile -->
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
@@ -20,8 +20,8 @@
 </head>
 <body class="basictorso">
 	<span class="badge">ng-table_practice...</span>
-	<uib-accordion close-others="true">
-		<uib-accordion-group ng-repeat="uibgp in uibgps">
+	<uib-accordion close-others="true" ng-controller="IndexUibCtrl">
+		<uib-accordion-group ng-repeat="uibgp in uibgps" is-open="status.open">
 			<uib-accordion-heading>
 				{{uibgp.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
 			</uib-accordion-heading>

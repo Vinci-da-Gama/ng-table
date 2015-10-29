@@ -1,5 +1,5 @@
 (function () {
-	var cdM = angular.module('appname.cust.dir');
+	var cdM = angular.module('ntp.cust.dir');
 
 	// cdM
 
