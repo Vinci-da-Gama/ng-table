@@ -20,6 +20,14 @@
 </head>
 <body class="basictorso">
 	<span class="badge">ng-table_practice...</span>
+	<uib-accordion close-others="true">
+		<uib-accordion-group ng-repeat="uibgp in uibgps">
+			<uib-accordion-heading>
+				{{uibgp.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+			</uib-accordion-heading>
+				{{uibgp.gContent}}
+		</uib-accordion-group>
+	</uib-accordion>
 </body>
 <!-- compiled-app-js -->
 <script type="text/javascript" language="javascript" src="./metamorphosis/build/js/app-compiled.js"></script>
