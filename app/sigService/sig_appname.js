@@ -21,6 +21,24 @@
 (function () {
 	var ssM = angular.module('ntp.sig.service');
 
-	// ssM
+	ssM.service('inqueryInfo', ['$http', 'dataAisle', function($http, dataAisle){
+		var dbPath = dataAisle.dbLane;
+
+		this.ObtainDossier = function (func) {
+			$http.get(dbPath)
+			.then(function (testimony) {
+				func(testimony);
+				// console.log('the testimony is ...', testimony);
+			})
+			.catch(function (data, config, status) {
+				console.log("sigSrevice error line -- 16 -\&\#1046\;- data : "+data+" config: "+config+" status: "+status+".---");
+			})
+			.finally(function () {
+				console.log('anyway, finally...');
+			});
+
+		};
+
+	}]);
 
 })();

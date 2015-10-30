@@ -1,0 +1,17 @@
+<table class="table table-hover table-striped" show-filter="true">
+	<caption>This is Table Caption...</caption>
+	<thead>
+		<tr>
+			<th>Table HEAD in thead</th>
+			<th>finallly, I didn't use ng-table...</th>
+			<th>due to it will token tons of resources...</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in tableData">
+			<td>{{user.name}}</td>
+			<td>{{user.age}}</td>
+			<td>{{user.label}}</td>
+		</tr>
+	</tbody>
+</table>
