@@ -31,6 +31,27 @@
 
 })();
 (function () {
+	var ctrlM = angular.module('ntp.ctrl');
+
+	ctrlM.controller('IndexUibCtrl', ['$scope', function($scope){
+		var cs = $scope;
+		var uibArr = [
+			{title: "ngtable-intro", gContent:"intro natable basic form..."},
+			{title: "ngtable-load-Data", gContent:"load-Data natable"},
+			{title: "ngtable-pagination", gContent:"pagination natable"},
+			{title: "ngtable-sorting", gContent:"sorting natable"},
+			{title: "ngtable-filtering", gContent:"filtering natable"},
+			{title: "ngtable-grouping", gContent:"grouping natable"},
+			{title: "ngtable-formatting", gContent:"formatting natable"},
+			{title: "ngtable- show and hide Column", gContent:"Show and hide Column natable"},
+			{title: "ngtable-editing", gContent:"editing natable"},
+			{title: "ngtable-event", gContent:"event natable"}
+		];
+		cs.uibgps = uibArr;
+	}]);
+
+})();
+(function () {
 	var cosM = angular.module('ntp.constant');
 
 	cosM.constant('dataAisle', {
@@ -53,6 +74,9 @@
 					initData = res.data.menu.items;
 					cs.tableData = clearNullInArr (initData);
 					console.log('line 15 -- the cs.tableData is --> ', cs.tableData);
+				};
+				cs.theEvent = function ($event) {
+					console.log('the event is --> ', $event);
 				};
 
 				function clearNullInArr (tbdArr) {
@@ -85,71 +109,6 @@
 	var dM = angular.module('ntp.dir');
 
 	// dM
-
-})();
-(function () {
-	var ctrlM = angular.module('ntp.ctrl');
-
-	ctrlM.controller('IndexUibCtrl', ['$scope', function($scope){
-		var cs = $scope;
-		var uibArr = [
-			{title: "ngtable-intro", gContent:"intro natable basic form..."},
-			{title: "ngtable-load-Data", gContent:"load-Data natable"},
-			{title: "ngtable-pagination", gContent:"pagination natable"},
-			{title: "ngtable-sorting", gContent:"sorting natable"},
-			{title: "ngtable-filtering", gContent:"filtering natable"},
-			{title: "ngtable-grouping", gContent:"grouping natable"},
-			{title: "ngtable-formatting", gContent:"formatting natable"},
-			{title: "ngtable- show and hide Column", gContent:"Show and hide Column natable"},
-			{title: "ngtable-editing", gContent:"editing natable"},
-			{title: "ngtable-event", gContent:"event natable"}
-		];
-		cs.uibgps = uibArr;
-	}]);
-
-})();
-// service js Document
-// $log.log("sigSrevice error line -- 14 --- data : "+data+" config: "+config+" status: "+status+".---");
-/*sigM.service('inquireInfo', ['$http', '$log', 'appnameDb', function($http, $log, appnameDb){
-	var dbPath = appnameDb.dbDot+appnameDb.delimiter+appnameDb.dbPrefix+appnameDb.delimiter+appnameDb.dbName+appnameDb.dbExtension;
-
-	this.obtainDossier = function (func) {
-		$http.get(dbPath)
-		.then(function (testimony) {
-			func(testimony.data);
-			$log.log('get data successfully. '+dbPath);
-		})
-		.catch(function (data, config, status) {
-			$log.log("sigSrevice error line -- 16 -\&\#1046\;- data : "+data+" config: "+config+" status: "+status+".---");
-		})
-		.finally(function () {
-			$log.log('sigSrevice line 19, finally method.');
-		});
-	};
-
-}]);*/
-(function () {
-	var ssM = angular.module('ntp.sig.service');
-
-	ssM.service('inqueryInfo', ['$http', 'dataAisle', function($http, dataAisle){
-		var dbPath = dataAisle.dbLane;
-
-		this.ObtainDossier = function (func) {
-			$http.get(dbPath)
-			.then(function (testimony) {
-				func(testimony);
-				// console.log('the testimony is ...', testimony);
-			})
-			.catch(function (data, config, status) {
-				console.log("sigSrevice error line -- 16 -\&\#1046\;- data : "+data+" config: "+config+" status: "+status+".---");
-			})
-			.finally(function () {
-				console.log('anyway, finally...');
-			});
-
-		};
-
-	}]);
 
 })();
 // service js Document
@@ -196,6 +155,50 @@
 	var sM = angular.module('ntp.service');
 
 	// sM
+
+})();
+// service js Document
+// $log.log("sigSrevice error line -- 14 --- data : "+data+" config: "+config+" status: "+status+".---");
+/*sigM.service('inquireInfo', ['$http', '$log', 'appnameDb', function($http, $log, appnameDb){
+	var dbPath = appnameDb.dbDot+appnameDb.delimiter+appnameDb.dbPrefix+appnameDb.delimiter+appnameDb.dbName+appnameDb.dbExtension;
+
+	this.obtainDossier = function (func) {
+		$http.get(dbPath)
+		.then(function (testimony) {
+			func(testimony.data);
+			$log.log('get data successfully. '+dbPath);
+		})
+		.catch(function (data, config, status) {
+			$log.log("sigSrevice error line -- 16 -\&\#1046\;- data : "+data+" config: "+config+" status: "+status+".---");
+		})
+		.finally(function () {
+			$log.log('sigSrevice line 19, finally method.');
+		});
+	};
+
+}]);*/
+(function () {
+	var ssM = angular.module('ntp.sig.service');
+
+	ssM.service('inqueryInfo', ['$http', 'dataAisle', function($http, dataAisle){
+		var dbPath = dataAisle.dbLane;
+
+		this.ObtainDossier = function (func) {
+			$http.get(dbPath)
+			.then(function (testimony) {
+				func(testimony);
+				// console.log('the testimony is ...', testimony);
+			})
+			.catch(function (data, config, status) {
+				console.log("sigSrevice error line -- 16 -\&\#1046\;- data : "+data+" config: "+config+" status: "+status+".---");
+			})
+			.finally(function () {
+				console.log('anyway, finally...');
+			});
+
+		};
+
+	}]);
 
 })();
 // jQuery Js Document

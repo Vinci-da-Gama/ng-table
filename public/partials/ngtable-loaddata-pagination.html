@@ -8,7 +8,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="user in tableData">
+		<tr ng-repeat="user in tableData" ng-click="theEvent($event)">
 			<td>{{user.name}}</td>
 			<td>{{user.age}}</td>
 			<td>{{user.label}}</td>

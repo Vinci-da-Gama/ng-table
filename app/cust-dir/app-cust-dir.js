@@ -14,6 +14,9 @@
 					cs.tableData = clearNullInArr (initData);
 					console.log('line 15 -- the cs.tableData is --> ', cs.tableData);
 				};
+				cs.theEvent = function ($event) {
+					console.log('the event is --> ', $event);
+				};
 
 				function clearNullInArr (tbdArr) {
 					var notNullArr = [];
