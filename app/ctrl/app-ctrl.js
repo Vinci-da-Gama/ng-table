@@ -15,7 +15,7 @@
 			{title: "ngtable-editing", gContent:"editing natable"},
 			{title: "ngtable-event", gContent:"event natable"}
 		];
-		cs.uibgps = 
+		cs.uibgps = uibArr;
 	}]);
 
 })();
